@@ -1,0 +1,97 @@
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logout{
+  margin-left: auto;
+ 
+}
+
+
+mat-table {
+  width: 20%;
+ 
+}
+
+
+mat-header-cell,
+mat-cell {
+  padding: 8px;
+}
+
+.spacing {
+  margin: 16px;
+}
+
+.inline {
+  display: flex;
+  
+}
+
+/* Estilos responsivos usando media queries */
+@media (max-width: 768px) {
+
+  .mat-header-cell,
+  .mat-cell {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .mat-column-description {
+    display: none;
+  }
+
+  .mat-row {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .mat-cell {
+    display: flex;
+    width: 30%;
+  }
+
+  .mat-icon-button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .mat-header-cell,
+  .mat-cell {
+    font-size: 10px;
+    padding: 4px;
+  }
+}
+
+
+////estilo de tabla
+.editable-field {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+ 
+}
+
+.editable-field input,
+.editable-field textarea {
+  width: 100%; 
+  padding: 0px;
+  font-size: 14px;
+  
+}
+
+//description
+.editable-field textarea {
+  resize: none; 
+  height: 30px; 
+ 
+}

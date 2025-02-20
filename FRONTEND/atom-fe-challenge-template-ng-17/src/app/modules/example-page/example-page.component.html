@@ -1,0 +1,28 @@
+<header class="mat-elevation-z1">
+  <img alt="Logo de ATOM Chat" ngSrc="assets/images/logo-atom-chat.png" width="192.5" height="55" priority />
+  <h1 class="welcome-txt">Reto Técnico</h1>
+</header>
+<div class="welcome-container">
+  <form class="example-form" novalidate>
+    <mat-form-field class="example-full-width">
+      <mat-label>Correo</mat-label>
+      <input type="email" 
+        matInput [formControl]="emailFormControl" 
+        [errorStateMatcher]="matcher"
+        placeholder="Ej. prueba@atom.com">
+                
+      @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+        <mat-error>Ingrese un formato correcto</mat-error>
+      }
+      @if (emailFormControl.hasError('required')) {
+        <mat-error>Correo es <strong>requerido</strong></mat-error>
+      }
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" class="btn-ingresar" type="button" (click)="ingresar($event)">
+      Ingresar
+    </button>
+  </form>
+  
+</div>
+

@@ -1,0 +1,98 @@
+<header class="mat-elevation-z1">
+  <img alt="Logo de ATOM Chat" src="assets/images/logo-atom-chat.png" width="192.5" height="55" />
+  <h1 class="welcome-txt">Reto Técnico</h1>
+</header>
+
+
+<div class="tasks-container">
+  <button  mat-raised-button color="primary" class="logout" type="button" (click)="Regresar($event)" >
+    Atras
+  </button>
+  <div class="formulario">
+   <h2>Lista de Tareas</h2>
+
+    <!-- Formulario para agregar tarea -->
+    <form  (submit)="addTask()" novalidate>
+      <!--Título -->
+      <div >
+        <mat-form-field class="spacing" appearance="fill">
+          <mat-label>Título</mat-label>
+          <input matInput [(ngModel)]="newTask.title" name="title" required />
+          <mat-error *ngIf="!newTask.title">El título es obligatorio</mat-error>
+        </mat-form-field>
+
+        <!-- Descripción -->
+        <mat-form-field class="spacing" appearance="fill">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput [(ngModel)]="newTask.description" name="description" required></textarea>
+          <mat-error *ngIf="!newTask.description">La descripción es obligatoria</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit"
+        [disabled]="!newTask.title || !newTask.description ">Crear tarea</button>
+
+      
+      
+      </div>
+    </form>
+  </div>
+
+
+  <!-- tareas -->
+  <div>
+    <mat-table [dataSource]="tasks" class="mat-elevation-z8">
+     
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Título </th>
+        <td mat-cell *matCellDef="let task">
+          <div class="editable-field" *ngIf="task.editing; else textTitle">
+            <input matInput [(ngModel)]="task.title" />
+          </div>
+          <ng-template #textTitle>{{ task.title }}</ng-template>
+        </td>
+      </ng-container>
+      
+      <!-- descripción -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+        <td mat-cell *matCellDef="let task">
+          <div class="editable-field" *ngIf="task.editing; else textDesc">
+            <textarea matInput [(ngModel)]="task.description"></textarea>
+          </div>
+          <ng-template #textDesc>{{ task.description }}</ng-template>
+        </td>
+      </ng-container>
+
+      <!-- fecha -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let task"> {{ task.date }} </td>
+      </ng-container>
+      
+      <!--  completado -->
+      <ng-container matColumnDef="completed">
+        <th mat-header-cell *matHeaderCellDef> Completada </th>
+        <td mat-cell *matCellDef="let task">
+          <mat-checkbox [(ngModel)]="task.completed" ></mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- Editar y Eliminar-->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let task">
+          <button mat-icon-button color="primary" (click)="toggleEdit(task)">
+            <mat-icon>{{ task.editing ? 'check' : 'edit' }}</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteTask(task.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Encabezado y cuerpo de la tabla -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </mat-table>
+  </div>
+</div>

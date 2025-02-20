@@ -1,0 +1,36 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  text-align: center;
+}
+
+.example-form {
+  display: flex;
+  flex-direction: row; 
+  gap: 16px; 
+  align-items: center; 
+}
+
+@media (max-width: 600px) { 
+  .example-form {
+    flex-direction: column; 
+    align-items: stretch; 
+  }
+
+  .btn-ingresar {
+    margin-left: 0; 
+    width: 100%; 
+  }
+}
