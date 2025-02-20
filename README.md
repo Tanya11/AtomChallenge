@@ -3,12 +3,22 @@ Challenge Atom tasks
 
 Este Backend esta desarrollado en node.js y desplegado en firebase cloud functions 
 
-## instalar dependencias
+## NODEJS
+## instalar dependencias en ambos
 npm install
 
-## construir
+## construir el backend
 tsc
 
-## Deployar en firebase
+## Deployar en firebase 
 
 firebase deploy --only functions
+
+## ANGULAR
+
+npm install
+
+ng build
+
+npm run deploy
+
