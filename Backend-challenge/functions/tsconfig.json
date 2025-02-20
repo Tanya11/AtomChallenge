@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",  
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "ESNext",  
+    "skipLibCheck": true  
+  },
+  "compileOnSave": true,
+  "include": [
+    "src"
+  ]
+}
+

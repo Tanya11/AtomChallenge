@@ -1,0 +1,17 @@
+# Compiled JavaScript files
+lib/**/*.js
+lib/**/*.js.map
+
+# TypeScript v1 declaration files
+typings/
+
+# Node.js dependency directory
+node_modules/
+*.local
+
+
+# Ignorar el archivo .env
+.env
+
+# Ignorar el archivo firebase.json
+firebase.json
