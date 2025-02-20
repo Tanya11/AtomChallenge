@@ -9,6 +9,6 @@ npm install
 ## construir
 tsc
 
-##deployar en firebase
+## Deployar en firebase
 
 firebase deploy --only functions
