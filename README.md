@@ -10,4 +10,5 @@ npm install
 tsc
 
 ##deployar en firebase
+
 firebase deploy --only functions
