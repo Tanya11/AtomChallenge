@@ -7,3 +7,4 @@ Este proyecto fue creado para dar la solucion al Challenge de Atom, el cual cons
 
 Pagina publicada: https://backend-challenge-6189f.web.app/home
 
+Para el diseño se utilizó un diseño limpio ingresando solamente el correo electrónico y el uso de sweetalert para las ventanas emergentes así como css para darle formato y una mejor visibilidad a la pagina
